@@ -1,16 +1,13 @@
-import "./App.css"
+import React from "react";
+import { useAgent } from "@aries-framework/react-hooks";
+import "./App.css";
 
-function App() {
+export const App: React.FC = () => {
+  const { agent } = useAgent();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Check the console and if no errors occured indy is injected successfully!</p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>agent: {JSON.stringify(agent)}</p>
     </div>
-  )
-}
-
-export default App
+  );
+};
